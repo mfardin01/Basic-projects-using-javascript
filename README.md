@@ -1,2 +1,2 @@
 # javascript
-This are basic topic ofjs
+This are basic topic of js
