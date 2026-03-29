@@ -1,3 +1,2 @@
-# html-css-js
-
-This are basic topic of html, css, js
+# javascript
+This are basic topic ofjs
