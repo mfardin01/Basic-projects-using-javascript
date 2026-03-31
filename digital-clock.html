@@ -1,0 +1,31 @@
+<html>
+
+<head>
+    <style>
+        h2 {
+            position: absolute;
+            top: 20px;
+            right: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2 id="clock">
+
+    </h2>
+    <script>
+        function dclock() {
+            dt = new Date();
+            hr = dt.getHours();
+            min = dt.getMinutes();
+            sec = dt.getSeconds();
+            https://meet.google.com/wte-quko-dyphttps://meet.google.com/wte-quko-dyp sec = dt.getSeconds();
+            document.getElementById("clock").innerHTML = (hr + ":" + min + ":" + sec);
+        }
+        dclock();
+        setInterval(dclock, 1000);
+    </script>
+</body>
+
+</html>
