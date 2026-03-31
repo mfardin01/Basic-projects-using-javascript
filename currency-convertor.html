@@ -1,0 +1,16 @@
+<html>
+    <body>
+        Dollar: <input type="text" id="dl" onkeyup="dtor()">
+        Rupees: <input type="text" id="rs" onkeyup="rtod()">
+        <script>
+            function dtor(){
+                dlr = document.getElementById("dl").value;
+                document.getElementById("rs").value = dlr*94.85;
+            }
+            function rtod(){
+                rps = document.getElementById("rs").value;
+                document.getElementById("dl").value = rps/94.85;
+            }
+        </script>
+    </body>
+</html>
