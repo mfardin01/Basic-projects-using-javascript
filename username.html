@@ -1,0 +1,15 @@
+<html>
+    <body>
+      Username: <input type="text" id="usr"> <br>
+        <button onclick="display()">Click here</button>
+        <h2 id="msg">
+
+        </h2>
+        <script>
+            function display(){
+              let  username = document.getElementById("usr").value;
+                document.getElementById("msg").innerHTML = " "+username;
+            }
+        </script>
+    </body>
+</html>
