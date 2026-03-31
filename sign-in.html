@@ -1,0 +1,109 @@
+<html>
+    <head>
+        <style>
+            .form{
+                border-style: solid;
+                width: 50vw;
+                height: 50vh;
+                border-radius: 20px;
+                background-color: violet;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            body{
+                background-color: rgb(225, 181, 225);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            span{
+                font-size: 20px;
+            }
+            input[type="text"],input[type="password"]{
+                width: 25vw;
+                height: 30px;
+                border-radius: 10px;
+                transition: 1s;
+                font-size: 20px;
+            }
+            /* input[type="text"]:focus,input[type="password"]:focus{
+                width: 30vw;
+            } */
+            input[type="submit"],input[type="reset"]{
+                width: 12vw;
+                height: 30px;
+                margin-top: 10px;
+                border-radius: 10px;
+                font-size: 20px;
+            }
+            input[type="reset"]{
+                margin-left: 1vw;
+            }
+            .inner{
+                /* border-style: solid; */
+                width: fit-content;
+                height: fit-content;
+            }
+            .captcha{
+                margin: 5px 0 5px 0;
+                text-align: center;
+                font-weight: bold;
+            }
+        </style>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <div class="form">
+            <div class="inner">
+                <form action="validate.py" onsubmit="return val()">
+                    <span>Username</span> <br>
+                    <input type="text"> <br>
+                    <span>Password</span> <br>
+                    <input type="password" id="pwd"> 
+                    <i class="fa fa-eye-slash" id="eye" onclick="showHide()"></i>
+                    <br>
+                    <input type="text" class="captcha" id="captcha" disabled> 
+                    <i class="fa fa-repeat" onclick="generateCaptcha()"></i>
+                    <br>
+                    <input type="text" id="ucaptcha">
+                    <br>
+                    <input type="submit"> <input type="reset">
+                </form>
+            </div>
+        </div>
+        <script>
+            function showHide(){
+                isEyeClosed = document.getElementById("eye").classList.contains("fa-eye-slash");
+                if(isEyeClosed){
+                    document.getElementById("eye").classList.remove("fa-eye-slash");
+                    document.getElementById("eye").classList.add("fa-eye");
+                    document.getElementById("pwd").setAttribute("type","text");
+                }
+                else{
+                    document.getElementById("eye").classList.add("fa-eye-slash");
+                    document.getElementById("eye").classList.remove("fa-eye");
+                    document.getElementById("pwd").setAttribute("type","password");
+                }
+            }
+            function generateCaptcha(){
+                varchaptcha = 'X78P';
+                allKeys = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+                document.getElementById("captcha").value = allKeys[Math.floor(Math.random()*62)]+allKeys[Math.floor(Math.random()*62)]+allKeys[Math.floor(Math.random()*62)]+allKeys[Math.floor(Math.random()*62)];
+            }
+            generateCaptcha();
+            setInterval(generateCaptcha,10000);
+            function val(){
+                sysCaptcha = document.getElementById("captcha").value;
+                userCaptcha = document.getElementById("ucaptcha").value;
+                if(sysCaptcha==userCaptcha){
+                    return true;
+                } 
+                else{
+                    alert("Invalid captcha");
+                    return false;
+                }
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,31 @@
+<html>
+    <body>
+        <button ondblclick="funct1()">Double click here</button>
+        <p onmouseover="funct2()">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque culpa laudantium quis voluptatem sequi explicabo animi iure officiis quos ratione recusandae totam, illo eaque debitis adipisci rem minima beatae sapiente placeat aliquid veniam facere eligendi aut. Quod, tempore adipisci eaque perspiciatis voluptate ad quo culpa aliquam ea suscipit cupiditate quas.
+        </p>
+        <p onmouseout="funct3()" onmousedown="funct4()">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae, labore?
+        </p>
+        <p onmouseup="funct5()">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique, dignissimos.
+        </p>
+        <script>
+            function funct1(){
+                alert("Button double clicked");
+            }
+            function funct2(){
+                alert("Mouse hovered over text");
+            }
+            function funct3(){
+                alert("Mouse left the text");
+            }
+            function funct4(){
+                alert("Mouse clicked on the text");
+            }
+            function funct5(){
+                alert("Mouse clicked and then released on the text");
+            }
+        </script>
+    </body>
+</html>
