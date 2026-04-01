@@ -1,0 +1,17 @@
+<html>
+    <body>
+        Enter a number: <input type="text" id="nmbr"> <br>
+        <button onclick="even()">Click here</button>
+        <script>
+            function even(){
+                num = parseInt(document.getElementById("nmbr").value);
+                for(i=1;i<num;i++){
+                    if (i%2==0){
+                        console.log(i);
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>
+
